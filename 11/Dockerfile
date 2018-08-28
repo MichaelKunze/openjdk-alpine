@@ -9,11 +9,11 @@ ENV PATH="${PATH}:${JAVA_HOME}/bin"
 # Download from http://jdk.java.net/11/
 
 RUN set -exo pipefail \
-    && wget --output-document /tmp/openjdk-11.tar.gz \
+    && wget --output-document /tmp/openjdk.tar.gz \
         https://download.java.net/java/early_access/alpine/${JDK_BUILD}/binaries/openjdk-11+${JDK_BUILD}_linux-x64-musl_bin.tar.gz \
     && mkdir -p /opt/java \
     && cd /opt/java \
-    && tar -zxvf /tmp/openjdk-11.tar.gz \
+    && tar -zxvf /tmp/openjdk.tar.gz \
     && ln -s /opt/java/$(ls -1) /opt/java/current \
     && rm /opt/java/current/lib/src.zip \
-    && rm /tmp/openjdk-11.tar.gz
+    && rm /tmp/openjdk.tar.gz
