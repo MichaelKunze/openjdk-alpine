@@ -14,6 +14,6 @@ RUN set -exo pipefail \
     && mkdir -p /opt/java \
     && cd /opt/java \
     && tar -zxvf /tmp/openjdk-11.tar.gz \
-    && JAVA_DIR=$(ls -1) \
-    && ln -s /opt/java/${JAVA_DIR} /opt/java/current \
+    && ln -s /opt/java/$(ls -1) /opt/java/current \
+    && rm /opt/java/current/lib/src.zip \
     && rm /tmp/openjdk-11.tar.gz
