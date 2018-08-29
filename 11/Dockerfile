@@ -21,6 +21,8 @@ COPY --from=ecr-login /root/go/bin/docker-credential-ecr-login /usr/local/bin/do
 # Download from http://jdk.java.net/11/
 
 RUN set -exo pipefail \
+    && apk add --no-cache \
+        ca-certificates \
     && wget --output-document /tmp/openjdk.tar.gz \
         https://download.java.net/java/early_access/alpine/${JDK_BUILD}/binaries/openjdk-11+${JDK_BUILD}_linux-x64-musl_bin.tar.gz \
     && mkdir -p /opt/java \
