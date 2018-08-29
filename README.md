@@ -1,2 +1,27 @@
 # openjdk-alpine
-Simple Dockerfile to build a docker image with openjdk11 based on alpine
+
+Simple docker image with openjdk 11/12 based on alpine and ecr-login from awslabs. 
+Makes it easy to upload a dockerimage to aws.
+
+## Tags
+
+* `11` ([11/Dockerfile](11/Dockerfile))
+* `12` ([12/Dockerfile](12/Dockerfile))
+
+## Usage
+
+Best used with [https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin](jib)
+
+```
+jib {
+    from {
+         image = "mkunze/openjdk-alpine:11"
+   }
+    to {
+        image = "<account>.dkr.ecr.<region>.amazonaws.com/<repository>"
+    }
+    container {
+        mainClass = "com.example.Startup"
+    }
+}
+```
