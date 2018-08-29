@@ -5,8 +5,8 @@ Makes it easy to upload a dockerimage to aws.
 
 ## Tags
 
-* `11` ([11/Dockerfile](11/Dockerfile))
-* `12` ([12/Dockerfile](12/Dockerfile))
+* `11` ([11/Dockerfile](https://github.com/MichaelKunze/openjdk-alpine/blob/master/11/Dockerfile))
+* `12` ([12/Dockerfile](https://github.com/MichaelKunze/openjdk-alpine/blob/master/12/Dockerfile))
 
 ## Usage
 
