@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-ARG JDK_BUILD="27"
+ARG JDK_BUILD="28"
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME="/opt/java/current"
