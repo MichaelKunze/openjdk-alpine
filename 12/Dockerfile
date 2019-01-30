@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-ARG JDK_BUILD="9"
+ARG JDK="12"
+ARG JDK_BUILD="29"
 
 ENV LANG C.UTF-8
 ENV JAVA_HOME="/opt/java/current"
@@ -10,7 +11,7 @@ ENV PATH="${PATH}:${JAVA_HOME}/bin"
 
 RUN set -exo pipefail \
     && wget --output-document /tmp/openjdk.tar.gz \
-        https://download.java.net/java/early_access/alpine/${JDK_BUILD}/binaries/openjdk-12-ea+${JDK_BUILD}_linux-x64-musl_bin.tar.gz \
+        https://download.java.net/java/early_access/alpine/${JDK_BUILD}/binaries/openjdk-${JDK}-ea+${JDK_BUILD}_linux-x64-musl_bin.tar.gz \
     && mkdir -p /opt/java \
     && cd /opt/java \
     && tar --extract --gzip --verbose --no-same-owner --file=/tmp/openjdk.tar.gz \
